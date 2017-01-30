@@ -1,0 +1,80 @@
+= Example API Guide for the JSON Placeholder API
+Jenn Strater;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[introduction]
+= Introduction
+
+The JSON Placeholder API is a RESTful web service that shows how Spring REST docs works for a public API.
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+The Example API tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource, overwrites all fields
+
+| `PATCH`
+| Used for partial updates to an existing resource
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+The JSON Placeholder API uses a few status codes in the API.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `404 Not Found`
+| The requested resource did not exist or the operation is not supported.
+
+|===
+
+For more information on status codes, see the https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html[w3 standard]
+
+[[overview-errors]]
+== Errors
+
+Whenever an error occurs, the body will contain an empty JSON object. For example:
+
+include::{snippets}/error-example/curl-request.adoc[]
+
+or
+
+include::{snippets}/error-example/http-request.adoc[]
+
+will respond with:
+
+include::{snippets}/error-example/http-response.adoc[]
+
+[[resources]]
+= Resources
+
+include::resources/posts.adoc[]
