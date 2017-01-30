@@ -4,15 +4,16 @@ buildscript {
     }
 
     dependencies {
-        classpath 'org.ajoberstar:gradle-git:1.1.0'
+        classpath 'org.ajoberstar:gradle-git-publish:0.1.0'
     }
 }
 
-apply plugin: 'org.ajoberstar.github-pages'
+apply plugin: 'org.ajoberstar.git-publish'
 
-githubPages {
-    repoUri = 'git@github.com:jlstrater/spring-restdocs-public-api-example.git'
-    pages {
+gitPublish {
+    repoUri = 'https://github.com/jlstrater/spring-restdocs-public-api-example.git'
+    branch = 'gh-pages'
+    contents {
         from(file('build/asciidoc/html5'))
     }
 }

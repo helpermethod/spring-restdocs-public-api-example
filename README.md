@@ -6,16 +6,16 @@ The published docs from the example are available [here](http://jlstrater.github
 
 -----
 
-You can build and run this sample using Gradle:
+This project does not have a runnable application, it is just a test suite.  To build the docs, use:
 
 ```
-$ gradle bootRun
+$ gradle build
 ```
 
 Or the Gradle Wrapper:
 
 ```
-$ ./gradlew bootRun
+$ ./gradlew build
 ```
 
 The docs from this project are sent to the temporary build folder `build/asciidoc/html5`.  The publish.gradle file 
